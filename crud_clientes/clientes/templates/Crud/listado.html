@@ -5,7 +5,7 @@
 {% block contenido %}
     <div class="card">
         <div class="card-header">
-            <a name="btnuevo" id="btnuevo" class="btn btn-primary" href="{% url 'crear'%}" role="button">Nuevo Cliente</a>
+            <a name="btnuevo" id="btnuevo" class="btn btn-primary" href="#" role="button">Nuevo Cliente</a>
         </div>
         <div class="card-body">
             <h4 class="card-title">Clientes</h4>
@@ -14,28 +14,29 @@
                     <tr>
                         <th>ID</th>
                         <th>Nombre</th>
-                        <th>Ap</th>
+                        <th>AP</th>
                         <th>Am</th>
-                        <th>Direccion</th>
+                        <th>Lenguaje</th>
+                        <th>So</th>
                         <th>Foto</th>
-                        <th>Acciones</th>
                     </tr>
                 </thead>
                 <tbody>
-                    {% for cl in listado %}
+                    {% for cl in clientes %}
                     <tr>
                         
                         <td>{{cl.id}}</td>
-                        <td>{{cl.nom}}</td>
-                        <td>{{cl.ape}}</td>
-                        <td>{{cl.apm}}</td>
-                        <td>{{cl.dir}}</td>
+                        <td>{{cl.nombre}}</td>
+                        <td>{{cl.ap}}</td>
+                        <td>{{cl.am}}</td>
+                        <td>{{cl.lenguaje}}</td>
+                        <td>{{cl.so}}</td>
                         <td>
                             <img src="{{cl.foto.url}}" height="60">
                         </td>
                         <td>
-                            <a name="bteditar" id="bteditar" class="btn btn-primary" href="{% url 'editar' cl.id %}" role="button">Editar</a>
-                            <a name="bteliminar" id="bteliminar" class="btn btn-danger" href="{% url 'eliminar' cl.id %}" role="button">Eliminar</a>
+                            <a name="bteditar" id="bteditar" class="btn btn-primary" href="#" role="button">Editar</a>
+                            <a name="bteliminar" id="bteliminar" class="btn btn-danger" href="#" role="button">Eliminar</a>
                         </td>
                         
                     </tr>
