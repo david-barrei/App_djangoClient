@@ -14,11 +14,11 @@ def lista(request):
 
 def crear(request):
     if request.method=='GET':
-        formulario=ClienteForm()
+        formulario = ClienteForm()
         return render (request,'Crud/crear.html', {'formulario':formulario})
     else:
         formulario=ClienteForm(request.POST)
-        if formulario.is_valis():
+        if formulario.is_valid():
             formulario.save()
             return redirect('lista')
 
